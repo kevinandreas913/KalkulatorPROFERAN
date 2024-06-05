@@ -41,8 +41,9 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> 
+    
+    <!-- kalkulator 2 -->
     <div class="modal fade" id="kalkulator2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-dialog">
