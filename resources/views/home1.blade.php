@@ -11,7 +11,7 @@
 
 <body>
     <div class="fab">
-        <img src="{{asset('assets/img/x-circle.png')}}" alt="">
+        <img src="{{asset('assets/img/arrow-bar-up.png')}}" alt="">
     </div>
 
     <div class="box">
@@ -24,13 +24,31 @@
         </button>
     </div>
 
-    <div class="modal fade" id="kalkulator1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"> 
+    <!-- Button trigger modal -->
+    <!-- <div class="modal fade" id="kalkulator1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-body-edit">
+                        <div class="iframe1">
+                            <iframe src="/kalkulator" frameborder="0" width="100%" height="600px"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- catatan:
+bagian atas adalah yang salah, yang bawah adalah yang benar
+kalau mau ke awal, tinggal hilangkan koment yang bawah -->
+    <div class="modal fade" id="kalkulator1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-dialog">
                 <div class="modal-contents">
-                    <div class="modal-header-edit">
+                    <!-- <div class="modal-header-edit">
                         <button type="button" class="btn-close-edit" data-dismiss="modal" aria-label="Close"><img id="close-btn" src="{{asset('assets/img/x-circle.png')}}" alt=""></button>
-                    </div>  
+                    </div>   -->
                     <div class="modal-body-edit">
                         <div class="modal-body-edit">
                             <div class="iframe1">
@@ -41,16 +59,16 @@
                 </div>
             </div>
         </div>
-    </div> 
-    
+    </div>
+
     <!-- kalkulator 2 -->
-    <div class="modal fade" id="kalkulator2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="kalkulator2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-dialog">
                 <div class="modal-contents">
-                    <div class="modal-header-edit">
+                    <!-- <div class="modal-header-edit">
                         <button type="button" class="btn-close-edit" data-dismiss="modal" aria-label="Close"><img id="close-btn" src="{{asset('assets/img/x-circle.png')}}" alt=""></button>
-                    </div>
+                    </div> -->
                     <div class="modal-body-edit">
                         <div class="modal-body-edit">
                             <div class="iframe1">

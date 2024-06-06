@@ -20,3 +20,5 @@ use App\Http\Controllers\kalkulator;
 Route::get("/", [kalkulator::class, 'home']);
 Route::get("/kalkulator", [kalkulator::class, 'kalkulator1']);
 Route::get("/kalkulator2", [kalkulator::class, 'kalkulator2']);
+Route::get("/coba", [kalkulator::class, 'coba']);
+Route::get("/coba1", [kalkulator::class, 'coba1']);

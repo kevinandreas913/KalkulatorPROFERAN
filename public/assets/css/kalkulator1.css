@@ -86,6 +86,34 @@ button:active {
 
 }
 
+.modal-header-edit {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: var(--bs-modal-header-padding);
+    bottom: 24px;
+    border-top-left-radius: var(--bs-modal-inner-border-radius);
+    border-top-right-radius: var(--bs-modal-inner-border-radius);
+}
+
+/* catatan dari bagian sini ke bawah merupakan bagian baru, kalau mau ke awal hapus saja bagian ini */
+#close-btn {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-close-edit {
+    box-sizing: content-box;
+    width: 2em;
+    height: 2em;
+    padding: .25em .25em;
+    color: #000;
+    background: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 500rem;
+    opacity: var(--bs-btn-close-opacity);
+}
+
 #btnclose{
     height: 10px;
     width: 10px;
@@ -109,4 +137,10 @@ button:active {
     border: 0;
     border-radius: var(--bs-modal-border-radius);
     outline: 0;
+}
+
+.calculator-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1px;
 }

@@ -18,4 +18,15 @@ class kalkulator extends Controller
     {
         return view('/kalkulator2');
     }
+
+    public function coba()
+    {
+        return view('/nantidihapus');
+    }
+
+    public function coba1()
+    {
+        return view('/nantidihapus1');
+    }
+
 }

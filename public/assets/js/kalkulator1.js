@@ -1,3 +1,5 @@
+// 
+
 document.addEventListener('DOMContentLoaded', () => {
     const display = document.querySelector('#display');
     const buttons = document.querySelectorAll('.num');
@@ -5,13 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const clear = document.querySelector('#clear');
     const equals = document.querySelector('#equals');
     const del = document.querySelector('#delete');
+    var modal = document.querySelector(".modal");
 
     let currentNum = '';
     let prevNum = '';
     let result = null;
     let currentOperator = null;
 
-    console.log("JavaScript loaded and DOM fully parsed");
+    loadState();
 
     buttons.forEach(button => {
         button.addEventListener('click', handleNumberClick);
@@ -26,17 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     del.addEventListener('click', handleDeleteClick);
 
     function handleNumberClick(e) {
-        console.log("Number clicked:", e.target.value);
         if (result !== null) {
             currentNum = '';
             result = null;
         }
         currentNum += e.target.value;
         updateDisplay();
+        saveState();
     }
 
     function handleOperatorClick(e) {
-        console.log("Operator clicked:", e.target.value);
         if (currentNum === '') return;
 
         if (currentOperator !== null) {
@@ -47,33 +49,33 @@ document.addEventListener('DOMContentLoaded', () => {
         prevNum = currentNum;
         currentNum = '';
         updateDisplay();
+        saveState();
     }
 
     function handleEqualsClick() {
-        console.log("Equals clicked");
         if (currentOperator === null || currentNum === '') return;
         calculate();
+        saveState();
     }
 
     function handleClearClick() {
-        console.log("Clear clicked");
         currentNum = '';
         prevNum = '';
         result = null;
         currentOperator = null;
         display.value = '';
+        saveState();
     }
 
     function handleDeleteClick() {
-        console.log("Delete clicked");
         if (currentNum !== '') {
             currentNum = currentNum.slice(0, -1);
             updateDisplay();
+            saveState();
         }
     }
 
     function calculate() {
-        console.log("Calculating result");
         const prev = parseFloat(prevNum.replace(/,/g, '.'));
         const current = parseFloat(currentNum.replace(/,/g, '.'));
         if (isNaN(prev) || isNaN(current)) return;
@@ -117,5 +119,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const parts = numStr.split(',');
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
         return parts.join(',');
+    }
+
+    function saveState() {
+        const state = {
+            currentNum,
+            prevNum,
+            currentOperator,
+            displayValue: display.value,
+        };
+        localStorage.setItem('calculatorState', JSON.stringify(state));
+    }
+
+    function loadState() {
+        const state = JSON.parse(localStorage.getItem('calculatorState'));
+        if (state) {
+            currentNum = state.currentNum;
+            prevNum = state.prevNum;
+            currentOperator = state.currentOperator;
+            display.value = state.displayValue;
+        }
     }
 });
