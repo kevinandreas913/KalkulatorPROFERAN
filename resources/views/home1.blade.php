@@ -24,33 +24,16 @@
         </button>
     </div>
 
-    <!-- Button trigger modal -->
-    <!-- <div class="modal fade" id="kalkulator1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-body-edit">
-                        <div class="iframe1">
-                            <iframe src="/kalkulator" frameborder="0" width="100%" height="600px"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- catatan:
-bagian atas adalah yang salah, yang bawah adalah yang benar
-kalau mau ke awal, tinggal hilangkan koment yang bawah -->
     <div class="modal fade" id="kalkulator1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-dialog">
                 <div class="modal-contents">
                     <!-- <div class="modal-header-edit">
                         <button type="button" class="btn-close-edit" data-dismiss="modal" aria-label="Close"><img id="close-btn" src="{{asset('assets/img/x-circle.png')}}" alt=""></button>
-                    </div>   -->
+                    </div> -->
                     <div class="modal-body-edit">
                         <div class="modal-body-edit">
+                            <button type="button" class="btn-close-edit" data-dismiss="modal" aria-label="Close"><img id="close-btn" src="{{asset('assets/img/x-circle.png')}}" alt=""></button>
                             <div class="iframe1">
                                 <iframe src="/kalkulator" frameborder="0" width="100%" height="600px"></iframe>
                             </div>
@@ -71,6 +54,7 @@ kalau mau ke awal, tinggal hilangkan koment yang bawah -->
                     </div> -->
                     <div class="modal-body-edit">
                         <div class="modal-body-edit">
+                            <button type="button" class="btn-close-edit" data-dismiss="modal" aria-label="Close"><img id="close-btn" src="{{asset('assets/img/x-circle.png')}}" alt=""></button>
                             <div class="iframe1">
                                 <iframe src="/kalkulator2" frameborder="0" width="100%" height="600px"></iframe>
                             </div>
@@ -81,31 +65,20 @@ kalau mau ke awal, tinggal hilangkan koment yang bawah -->
         </div>
     </div>
 
-    <!-- <div class="modal fade" id="kalkulator2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-contents">
-                <div class="modal-body">
-                    <iframe src="/kalkulator2" frameborder="0" width="100%" height="600px"></iframe>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <script>
         document.querySelector('.fab').addEventListener('click', function(e) {
             document.querySelector('.box').classList.toggle('box-active');
             document.querySelector('.fab').classList.toggle('fab-active');
         });
+        // Event listener untuk tombol close di kalkulator1
+        document.querySelector('#kalkulator1 .btn-close-edit').addEventListener('click', function(e) {
+            $('#kalkulator1').modal('hide');
+        });
 
-        // document.querySelectorAll('.item').forEach(item => {
-        //     item.addEventListener('touchstart', function() {
-        //         item.classList.add('item-active');
-        //     });
-
-        //     item.addEventListener('touchend', function() {
-        //         item.classList.remove('item-active');
-        //     });
-        // });  
+        // Event listener untuk tombol close di kalkulator2
+        document.querySelector('#kalkulator2 .btn-close-edit').addEventListener('click', function(e) {
+            $('#kalkulator2').modal('hide');
+        });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

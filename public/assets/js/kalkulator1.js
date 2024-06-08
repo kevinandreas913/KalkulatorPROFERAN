@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const equals = document.querySelector('#equals');
     const del = document.querySelector('#delete');
     var modal = document.querySelector(".modal");
+    // const closeBtn = document.querySelector('.btn-close-edit');
+
+    // closeBtn.addEventListener('click', handleModalClose);
 
     let currentNum = '';
     let prevNum = '';

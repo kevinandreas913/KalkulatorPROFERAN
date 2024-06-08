@@ -14,7 +14,7 @@
             <div class="modal-contents">
                 <div id="calculator">
                     <div class="modal-header-edit">
-                        <img src="{{asset('assets/img/logo.png')}}" alt="Logo" id="logo">
+                        <img src="{{asset('assets/img/logo1.png')}}" alt="Logo" id="logo">
                         <!-- <button type="button" class="btn-close-edit" data-dismiss="modal" aria-label="Close"><img id="close-btn" src="{{asset('assets/img/x-circle.png')}}" alt=""></button> -->
                     </div>
                     <!-- <h1>Kalkulator</h1> -->
