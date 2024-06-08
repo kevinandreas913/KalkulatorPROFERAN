@@ -92,6 +92,8 @@
             <button class="operator" value="shift10">RSol. Debt to Capital Ratio</button>
         </div>
     </div> -->
+    <audio id="sound1" src="{{asset('assets/sound/sound1.mp3')}}"></audio>
+    <audio id="sound2" src="{{asset('assets/sound/sound2.mp3')}}"></audio>
 
     <script src="{{ asset('assets/js/kalkulator2.js') }}"></script>
 </body>

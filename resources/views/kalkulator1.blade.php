@@ -61,6 +61,8 @@ lalu hapus juga
     </div>
 
 
+    <audio id="sound1" src="{{asset('assets/sound/sound1.mp3')}}"></audio>
+    <audio id="sound2" src="{{asset('assets/sound/sound2.mp3')}}"></audio>
 
     <script src="{{ asset('assets/js/kalkulator1.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

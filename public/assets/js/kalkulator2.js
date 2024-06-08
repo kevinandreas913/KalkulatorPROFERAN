@@ -263,11 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const display = document.getElementById('display');
     const operators = document.querySelectorAll('#operatorMenu .operator, .operator[value=";"]');
 
-    loadState();  // Panggil loadState setelah inisialisasi variabel
+    loadState();
 
-    showOperators.addEventListener('click', () => {
-        operatorMenu.style.display = operatorMenu.style.display === 'block' ? 'none' : 'block';
-    });
+    // showOperators.addEventListener('click', () => {
+    //     operatorMenu.style.display = operatorMenu.style.display === 'block' ? 'none' : 'block';
+    // });
 
     operators.forEach(operator => {
         operator.addEventListener('click', function() {
@@ -276,17 +276,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', handleNumberClick);
+    // });
+
+    // operators.forEach(operator => {
+    //     operator.addEventListener('click', handleOperatorClick);
+    // });
+    
+    // equals.addEventListener('click', handleEqualsClick);
+    // clear.addEventListener('click', handleClearClick);
+    // del.addEventListener('click', handleDeleteClick);
+
+    showOperators.addEventListener('click', () => {
+        operatorMenu.style.display = operatorMenu.style.display === 'block' ? 'none' : 'block';
+        playSound(sound2);
+    });
+
     buttons.forEach(button => {
-        button.addEventListener('click', handleNumberClick);
+        button.addEventListener('click', (e) => {
+            handleNumberClick(e);
+            playSound(sound1);
+        });
     });
 
     operators.forEach(operator => {
-        operator.addEventListener('click', handleOperatorClick);
+        operator.addEventListener('click', (e) => {
+            handleOperatorClick(e);
+            playSound(sound2);
+        });
     });
-    
-    equals.addEventListener('click', handleEqualsClick);
-    clear.addEventListener('click', handleClearClick);
-    del.addEventListener('click', handleDeleteClick);
+
+    equals.addEventListener('click', (e) => {
+        handleEqualsClick();
+        playSound(sound2);
+    });
+
+    clear.addEventListener('click', (e) => {
+        handleClearClick();
+        playSound(sound2);
+    });
+
+    del.addEventListener('click', (e) => {
+        handleDeleteClick();
+        playSound(sound2);
+    });
+
+    function playSound(sound) {
+        sound.currentTime = 0;
+        sound.play();
+    }
 
     function handleNumberClick(e) {
         currentNum += e.target.value;

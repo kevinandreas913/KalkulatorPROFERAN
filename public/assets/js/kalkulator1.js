@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const equals = document.querySelector('#equals');
     const del = document.querySelector('#delete');
     var modal = document.querySelector(".modal");
+    const sound1 = document.getElementById('sound1'); 
+    const sound2 = document.getElementById('sound2');
+
     // const closeBtn = document.querySelector('.btn-close-edit');
 
     // closeBtn.addEventListener('click', handleModalClose);
@@ -20,12 +23,44 @@ document.addEventListener('DOMContentLoaded', () => {
     loadState();
 
     buttons.forEach(button => {
-        button.addEventListener('click', handleNumberClick);
+        button.addEventListener('click', (e) => {
+            handleNumberClick(e);
+            playSound(sound1); 
+        });
     });
 
     operators.forEach(operator => {
-        operator.addEventListener('click', handleOperatorClick);
+        operator.addEventListener('click', (e) => {
+            handleOperatorClick(e);
+            playSound(sound2); 
+        });
     });
+
+    equals.addEventListener('click', (e) => {
+        handleEqualsClick(e);
+        playSound(sound2);
+    });
+    clear.addEventListener('click', (e) => {
+        handleClearClick(e);
+        playSound(sound2); 
+    });
+    del.addEventListener('click', (e) => {
+        handleDeleteClick(e);
+        playSound(sound2); 
+    });
+
+    function playSound(sound) {
+        sound.currentTime = 0; 
+        sound.play();
+    }
+
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', handleNumberClick);
+    // });
+
+    // operators.forEach(operator => {
+    //     operator.addEventListener('click', handleOperatorClick);
+    // });
 
     equals.addEventListener('click', handleEqualsClick);
     clear.addEventListener('click', handleClearClick);
